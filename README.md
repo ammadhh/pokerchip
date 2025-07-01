@@ -33,8 +33,8 @@ A real-time virtual poker chip tracking application for home games and casual po
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/pokergame.git
-cd pokergame
+git clone https://github.com/ammadhh/pokerchip.git
+cd pokerchip
 ```
 
 2. Install dependencies:
@@ -60,12 +60,24 @@ STRIPE_WEBHOOK_SECRET=whsec_...
 NEXT_PUBLIC_URL=http://localhost:3000
 ```
 
-5. Run database migrations in Supabase
+5. Set up Supabase database:
+   - Create a new Supabase project
+   - Run the SQL in `supabase/schema.sql` in your Supabase SQL editor
+   - Enable Google OAuth in Authentication > Providers
+   - Add your redirect URLs in Authentication settings
 
-6. Start the development server:
+6. Set up Stripe:
+   - Create a Stripe account
+   - Get your test API keys
+   - Set up a webhook endpoint for `/api/stripe/webhook`
+   - Add webhook events: `checkout.session.completed`
+
+7. Start the development server:
 ```bash
 npm run dev
 ```
+
+8. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Game Rules
 
