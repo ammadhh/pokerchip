@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-poker-dark text-white min-h-screen;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-poker-green hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .btn-danger {
+    @apply bg-poker-red hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .card {
+    @apply bg-gray-800 border border-gray-700 rounded-xl p-6 shadow-lg;
+  }
+  
+  .chip-display {
+    @apply flex items-center gap-2 text-poker-yellow font-bold;
+  }
+  
+  .status-online {
+    @apply w-3 h-3 bg-green-500 rounded-full;
+  }
+  
+  .status-offline {
+    @apply w-3 h-3 bg-gray-500 rounded-full;
+  }
+  
+  .poker-table {
+    @apply bg-gradient-to-br from-green-800 to-green-900 border-8 border-amber-600 rounded-full;
+  }
+  
+  .betting-button {
+    @apply bg-poker-blue hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105;
+  }
+  
+  .activity-join {
+    @apply text-green-400;
+  }
+  
+  .activity-leave {
+    @apply text-red-400;
+  }
+  
+  .activity-bet {
+    @apply text-blue-400;
+  }
+  
+  .activity-take {
+    @apply text-yellow-400;
+  }
+}
