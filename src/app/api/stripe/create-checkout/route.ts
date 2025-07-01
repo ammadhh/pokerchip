@@ -18,8 +18,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const package = CHIP_PACKAGES.find(p => p.id === packageId);
-    if (!package) {
+    const chipPackage = CHIP_PACKAGES.find(p => p.id === packageId);
+    if (!chipPackage) {
       return NextResponse.json(
         { error: 'Invalid package' },
         { status: 400 }
@@ -47,14 +47,14 @@ export async function POST(request: NextRequest) {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: package.name,
-            description: `${package.chips.toLocaleString()} poker chips${package.bonus ? ` (+${package.bonus} bonus!)` : ''}`,
+            name: chipPackage.name,
+            description: `${chipPackage.chips.toLocaleString()} poker chips${chipPackage.bonus ? ` (+${chipPackage.bonus} bonus!)` : ''}`,
             metadata: {
-              chips: package.chips.toString(),
-              package_id: package.id,
+              chips: chipPackage.chips.toString(),
+              package_id: chipPackage.id,
             }
           },
-          unit_amount: package.price,
+          unit_amount: chipPackage.price,
         },
         quantity: 1,
       }],
@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
       metadata: {
         user_id: userId,
         package_id: packageId,
-        chips: package.chips.toString(),
+        chips: chipPackage.chips.toString(),
       },
     });
 
@@ -76,13 +76,13 @@ export async function POST(request: NextRequest) {
         user_id: userId,
         stripe_payment_intent_id: 'pending',
         stripe_checkout_session_id: session.id,
-        amount_cents: package.price,
-        chips_purchased: package.chips,
+        amount_cents: chipPackage.price,
+        chips_purchased: chipPackage.chips,
         status: 'pending',
         currency: 'usd',
         metadata: {
           package_id: packageId,
-          package_name: package.name,
+          package_name: chipPackage.name,
         }
       });
 
