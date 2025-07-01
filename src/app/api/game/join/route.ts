@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getServiceSupabase } from '@/lib/supabase';
 
 export async function POST(request: NextRequest) {
   try {
@@ -11,6 +11,9 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Get service role client for server-side operations
+    const supabase = getServiceSupabase();
 
     // Check if room exists
     const { data: room, error: roomError } = await supabase

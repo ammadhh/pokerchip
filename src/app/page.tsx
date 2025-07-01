@@ -133,26 +133,26 @@ function HomePage() {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
-        {/* Animated background elements */}
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 relative overflow-hidden">
+        {/* Animated background elements - toned down */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-          <div className="absolute bottom-20 left-40 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
+          <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-float"></div>
+          <div className="absolute top-40 right-20 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-2xl opacity-8 animate-float-delayed"></div>
+          <div className="absolute bottom-20 left-40 w-64 h-64 bg-indigo-500 rounded-full mix-blend-multiply filter blur-2xl opacity-6 animate-float-slow"></div>
         </div>
         
         <div className="relative min-h-screen flex flex-col items-center justify-center px-6">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             {/* Main Logo */}
             <div className="space-y-6">
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mb-8 shadow-2xl">
+              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-8 shadow-2xl animate-glow"
                 <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.72-2.97-.01-2.2-1.9-2.96-3.65-3.22z"/>
                 </svg>
               </div>
               
-              <h1 className="text-6xl md:text-8xl font-black text-white mb-4 tracking-tight">
-                poker<span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">chips</span>
+              <h1 className="text-6xl md:text-8xl font-black text-white mb-4 tracking-tight animate-title-entrance">
+                poker<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 animate-gradient">chips</span>
                 <span className="text-4xl md:text-6xl text-gray-400">.io</span>
               </h1>
               
@@ -161,16 +161,16 @@ function HomePage() {
               </p>
               
               <div className="flex flex-wrap justify-center gap-6 text-gray-400 text-lg">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <div className="flex items-center gap-2 animate-fade-in-up">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-gentle-pulse"></div>
                   Real-time gameplay
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-500"></div>
+                <div className="flex items-center gap-2 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-gentle-pulse" style={{animationDelay: '0.5s'}}></div>
                   Secure payments
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-1000"></div>
+                <div className="flex items-center gap-2 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-gentle-pulse" style={{animationDelay: '1s'}}></div>
                   Advanced statistics
                 </div>
               </div>
@@ -226,11 +226,12 @@ function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
-      {/* Animated background */}
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 relative overflow-hidden">
+      {/* Animated background - subtler */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse delay-1000"></div>
+        <div className="absolute top-0 left-1/4 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-2xl opacity-8 animate-float"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-2xl opacity-6 animate-float-delayed"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-4 animate-float-slow"></div>
       </div>
 
       {/* Header */}
@@ -288,7 +289,7 @@ function HomePage() {
         <div className="max-w-6xl mx-auto w-full">
           {/* Welcome Section */}
           <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 animate-slide-up">
               Ready to play?
             </h2>
             <p className="text-xl text-gray-300 mb-2">
@@ -324,7 +325,7 @@ function HomePage() {
                     onChange={(e) => setDisplayName(e.target.value)}
                     placeholder="Enter your poker name"
                     maxLength={20}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm font-medium focus:bg-white/30 transition-colors"
                   />
                   <p className="text-xs text-gray-500 mt-2">
                     2-20 alphanumeric characters only

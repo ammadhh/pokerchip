@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getServiceSupabase } from '@/lib/supabase';
 import { generateRoomCode } from '@/lib/utils';
 
 export async function POST(request: NextRequest) {
@@ -12,6 +12,9 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Get service role client for server-side operations
+    const supabase = getServiceSupabase();
 
     // Generate unique room code
     let roomCode: string;
