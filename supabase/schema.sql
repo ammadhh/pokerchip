@@ -1,8 +1,7 @@
 -- PokerChips.io Database Schema
 -- Run this in your Supabase SQL editor
 
--- Enable Row Level Security
-ALTER TABLE auth.users ENABLE ROW LEVEL SECURITY;
+-- Note: auth.users table is managed by Supabase and cannot be modified
 
 -- Users table (extends auth.users)
 CREATE TABLE public.users (
