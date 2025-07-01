@@ -6,11 +6,12 @@ import { AuthProvider, useAuth } from '@/components/auth/AuthProvider';
 import LoginButton from '@/components/auth/LoginButton';
 import ChipDisplay from '@/components/ui/ChipDisplay';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
+import BuyChipsModal from '@/components/ui/BuyChipsModal';
 import { generateRoomCode, validateDisplayName } from '@/lib/utils';
 import { supabase } from '@/lib/supabase';
 
 function HomePage() {
-  const { user, userProfile, loading, signOut } = useAuth();
+  const { user, userProfile, loading, signOut, refreshProfile } = useAuth();
   const [displayName, setDisplayName] = useState('');
   const [joinCode, setJoinCode] = useState('');
   const [creating, setCreating] = useState(false);
@@ -31,6 +32,7 @@ function HomePage() {
     
     if (paymentStatus === 'success') {
       alert('Payment successful! Your chips have been added to your account.');
+      refreshProfile(); // Refresh profile to show updated chip balance
       // Remove the parameter from URL
       window.history.replaceState({}, document.title, window.location.pathname);
     } else if (paymentStatus === 'cancelled') {
@@ -280,6 +282,12 @@ function HomePage() {
           </div>
         </div>
       </main>
+
+      {/* Buy Chips Modal */}
+      <BuyChipsModal 
+        isOpen={showBuyChips} 
+        onClose={() => setShowBuyChips(false)} 
+      />
     </div>
   );
 }
